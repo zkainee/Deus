@@ -1,0 +1,9 @@
+name: Deus
+version: '${project.version}'
+main: nl.kaine.deus.Deus
+api-version: 1.18
+authors: [ Kaine ]
+description: Way off life
+commands:
+  interaction:
+    description: Chat met de server!
