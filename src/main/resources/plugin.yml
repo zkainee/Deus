@@ -5,5 +5,5 @@ api-version: 1.18
 authors: [ Kaine ]
 description: Way off life
 commands:
-  test:
-    description: Commando gemaakt voor testing
+  config:
+
