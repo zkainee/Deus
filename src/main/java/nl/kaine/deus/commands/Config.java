@@ -6,6 +6,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.List;
+
 public class Config implements CommandExecutor {
 
     private Deus deus;
@@ -18,14 +20,13 @@ public class Config implements CommandExecutor {
 
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            player.sendMessage(deus.getConfig().getString("Word"));
-            player.sendMessage(deus.getConfig().getInt("Number") + "");
-            if (deus.getConfig().getBoolean("Boolean")) {
-                player.sendMessage("This feature is enabled.");
-            }
-            for (String string : deus.getConfig().getStringList("String-list")) {
-                player.sendMessage(string);
-            }
+            deus.getConfig().set("Word", "Sheldon");
+
+            List<String> list = deus.getConfig().getStringList("String-list");
+            list.add("Nieuwe waarde");
+            deus.getConfig().set("String-list", list);
+
+            deus.saveConfig();
         }
         return false;
     }
