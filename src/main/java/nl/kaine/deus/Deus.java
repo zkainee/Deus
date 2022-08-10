@@ -1,10 +1,10 @@
 package nl.kaine.deus;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.entity.ArmorStand;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
@@ -14,10 +14,20 @@ public final class Deus extends JavaPlugin {
     public void onEnable() {
         System.out.println("DEUS | LOADED");
 
-        Entity polarBear = Objects.requireNonNull(Bukkit.getWorld("world")).spawnEntity(new Location(Bukkit.getWorld("world"), -60, 64, -99), EntityType.POLAR_BEAR);
-        polarBear.setGlowing(true);
+        // Item uit
+        ItemStack itemStack = new ItemStack(Material.CARROT, 4);
 
-        ArmorStand stand = (ArmorStand) Objects.requireNonNull(Bukkit.getWorld("world")).spawnEntity(new Location(Bukkit.getWorld("world"), -63, 64, -99), EntityType.ARMOR_STAND);
+        //Item ready, enkel aan player geven
+        ItemMeta meta = itemStack.getItemMeta();
+
+        itemStack.setItemMeta(meta);
+        // meta. [list]
+
+
+        Block block = Objects.requireNonNull(Bukkit.getWorld("world")).getBlockAt(15,60,1);
+        block.getType().equals(Material.CARROT);
+
+
     }
 
 }
