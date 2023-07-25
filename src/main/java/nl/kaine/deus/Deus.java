@@ -1,5 +1,6 @@
 package nl.kaine.deus;
 
+import nl.kaine.deus.Utility.Vanish;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
@@ -12,10 +13,11 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Deus extends JavaPlugin implements Listener {
-    @Override
+
     public void onEnable() {
         System.out.println("DEUS | LOADED");
 
+        getCommand("vanish").setExecutor(new Vanish());
         Bukkit.getPluginManager().registerEvents(this, this);
     }
 
@@ -52,7 +54,7 @@ public final class Deus extends JavaPlugin implements Listener {
         e.getPlayer().getInventory().addItem(chestplate);
         e.getPlayer().getInventory().addItem(leggings);
         e.getPlayer().getInventory().addItem(boots);
-        e.getPlayer().sendMessage(ChatColor.DARK_GREEN + "NETWORK | Kleding ontvangen!");
+        e.getPlayer().sendMessage(ChatColor.DARK_GREEN + "ᴅᴇᴜs | ᴄʟᴏᴛʜɪɴɢ ʀᴇᴄᴇɪᴠᴇᴅ");
     }
 
 }
