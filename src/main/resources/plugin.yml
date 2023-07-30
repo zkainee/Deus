@@ -3,6 +3,9 @@ version: '${project.version}'
 main: nl.kaine.deus.Deus
 api-version: 1.19
 authors: [ Kaine_ ]
+description: 'Way off Life'
 commands:
   vanish:
+    description: 'Vanish yourself out of this world.'
   punish:
+    description: 'Punish someone out of this server.'
