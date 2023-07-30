@@ -1,9 +1,13 @@
 package nl.kaine.deus.Utility;
 
-import org.bukkit.Bukkit;
+import org.bukkit.*;
+import org.bukkit.boss.BarColor;
+import org.bukkit.boss.BarStyle;
+import org.bukkit.boss.BossBar;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -14,9 +18,9 @@ public class Vanish implements CommandExecutor {
 
     // Vanished player list
     private List<UUID> vanished = new ArrayList<>();
+
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-
         //Check if player sends
         if(sender instanceof Player) {
             Player player = (Player) sender;
@@ -26,6 +30,9 @@ public class Vanish implements CommandExecutor {
                 vanished.remove(player.getUniqueId());
                 for (Player target : Bukkit.getOnlinePlayers()) {
                     target.showPlayer(player);
+                    player.playSound(player.getLocation(), Sound.ITEM_GOAT_HORN_SOUND_0, 2, 5);
+                    player.getWorld().strikeLightningEffect(player.getLocation());
+                    player.getWorld().playEffect(player.getLocation(), Effect.MOBSPAWNER_FLAMES, 5);
                 }
                 player.sendMessage("ᴅᴇᴜs | ʏᴏᴜ'ᴠᴇ ᴜɴᴠᴀɴɪsʜᴇᴅ");
             // Vanished = FALSE
@@ -37,7 +44,6 @@ public class Vanish implements CommandExecutor {
                 player.sendMessage("ᴅᴇᴜs | ʏᴏᴜ'ᴠᴇ ᴠᴀɴɪsʜᴇᴅ");
             }
         }
-
         return false;
     }
 }

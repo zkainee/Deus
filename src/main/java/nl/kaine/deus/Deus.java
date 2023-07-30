@@ -1,5 +1,6 @@
 package nl.kaine.deus;
 
+import nl.kaine.deus.Utility.Punish;
 import nl.kaine.deus.Utility.Vanish;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -18,6 +19,7 @@ public final class Deus extends JavaPlugin implements Listener {
         System.out.println("DEUS | LOADED");
 
         getCommand("vanish").setExecutor(new Vanish());
+        getCommand("punish").setExecutor(new Punish());
         Bukkit.getPluginManager().registerEvents(this, this);
     }
 
