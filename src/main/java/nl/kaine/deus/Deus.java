@@ -1,7 +1,7 @@
 package nl.kaine.deus;
 
-import nl.kaine.deus.Utility.Punish;
-import nl.kaine.deus.Utility.Vanish;
+import nl.kaine.deus.command.Punish;
+import nl.kaine.deus.command.Vanish;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Deus extends JavaPlugin  {

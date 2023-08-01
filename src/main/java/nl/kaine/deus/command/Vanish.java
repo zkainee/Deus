@@ -1,4 +1,4 @@
-package nl.kaine.deus.Utility;
+package nl.kaine.deus.command;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.UUID;
 
 public class Vanish implements CommandExecutor {
-
     // Vanished player list
     private List<UUID> vanished = new ArrayList<>();
 
@@ -45,3 +44,4 @@ public class Vanish implements CommandExecutor {
         return false;
     }
 }
+
